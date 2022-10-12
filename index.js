@@ -1,3 +1,3 @@
 const uri = process.env.MONGODB_URI;
 
-document.getElementById("thing").onclick = function () { alert(uri); };
+document.getElementById("thing").onclick = function () { alert("hello"); };
