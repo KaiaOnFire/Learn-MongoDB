@@ -1,4 +1,7 @@
 const UserModel = require("./models/user.js")
+const uri = process.env.MONGODB_URI;
+
+
 
 module.exports = {
   createANewUser: function(username, password, callback) {
