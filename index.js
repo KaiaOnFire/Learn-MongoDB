@@ -1,4 +1,4 @@
-document.getElementById("thing1").onclick = function () { alert("hello"); };
+document.getElementById("thing1").onclick = function () { console.log("hello"); };
 
 
 require('dotenv').config()
