@@ -1,3 +1,6 @@
+document.getElementById("thing1").onclick = function () { "hello"; };
+
+
 require('dotenv').config()
 
 const test = process.env.test
