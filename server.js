@@ -21,20 +21,35 @@ MongoClient.connect("mongodb+srv://Heroku:ajMWXi7NVddjcB8j@resumewebsitedetails.
     const messageCollection = db.collection('messages')
 
     // FUNCTIONS
-    APP.listen(3000, function() {
-        console.log("listening on 3000")
+    APP.listen(5000, function() {
+        console.log("listening on 5000")
     })
     
     APP.get("/", (req, res) => {
         db.collection('messages').find().toArray()
             .then(results => {
+                console.log(results)
                 res.render("index.ejs", { messages: results })
             })
             .catch(error => console.error(error))
     })
 
     APP.put('/updateMessage', (req, res) => {
-        console.log(req.body)
+        console.log(req.body.username)
+        messageCollection.findOneAndUpdate(
+            { username: req.body.username },
+            {
+              $set: {
+                username: req.body.username,
+                message: req.body.message
+              }
+            },
+            {
+              upsert: true
+            }
+          )
+            .then(result => {console.log(result)})
+            .catch(error => console.error(error))
     })
     
     APP.post("/createUser", (req, res) => {

@@ -34,7 +34,7 @@ updateTwo.addEventListener("click", _ => {
         headers: {'Content-Type': 'application/json'},
         body: JSON.stringify({
             username: "hi",
-            message: "bothersome"
+            message: "updated"
         })
     })
 })
