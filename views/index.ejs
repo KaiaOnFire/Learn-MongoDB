@@ -9,9 +9,9 @@
         <h1> I'm yelling. </h1>
 
         <form action="/createUser" method="POST">
-            <input type="text" placeholder="username" name="username">
-            <input type="text" placeholder="message" name="message">
-            <button type="submit"> Submit </button>
+            <input id="usernameCreate" type="text" placeholder="username" name="username">
+            <input id="msgCreate" type="text" placeholder="message" name="message">
+            <button type="submit" onclick="return usernameCheck()"> Submit </button>
         </form>
 
         <ul class="messages">
@@ -23,11 +23,11 @@
             <% } %>
         </ul>
 
-        <form>
+        <div>
             <input id="usernamePut" type="text" placeholder="username" name="username">
             <input id="msgPut" type="text" placeholder="message" name="message">
             <button id="updateBtn1" type="submit"> Update </button>
-        </form>
+        </div>
 
         <button id="updateBtn2" type="submit"> Update2 </button>
 
